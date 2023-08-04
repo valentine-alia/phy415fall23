@@ -1,4 +1,4 @@
-# 0 - Overview of PHY 415
+# 0 - Syllabus and Overview of PHY 415
 
 In designing this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
 
@@ -25,17 +25,10 @@ This is not to say that you are on your own. Here's what you can expect from me:
 -   Web page:
     [dannycab.github.io/phy415msu/](http://dannycab.github.io/phy415msu/)
 
-### Teaching Assistant
--   Neshad Amarasinghe (he/him/his)
--   Email: [devanes1@msu.edu](mailto:devanes1@msu.edu)
-
-### Slack Team
-
-*This term we will be using Slack for class discussion.* The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions, I encourage you to post your questions on there. You should be added to the Slack team by the first week of class. Email Danny if you are not part of the team. 
-
-**Link:** [https://phy415fall2022.slack.com/](https://phy415fall2022.slack.com/)
-
-
+### Learning Assistant
+-   [Alia Valentine](https://valentine-alia.github.io/) (she/her/hers)
+-   Email: [valen176@msu.edu](mailto:valen176@msu.edu)
+-   Office hrs: TBD, feel free to email me if you want to set up a time. I too enjoy visiting and talking about math and physics.
 
 ## Grading
 Details about [course activities are here](design.md) and [information regarding assessment is here](assessments.md). Your grade will be comprised of weekly discussion questions and several projects that you will complete in the form of a Jupyter notebook (a "computational essay", which we will discuss later). Your grade on each project is split between completion (50%) and quality (50%). We will collectively define "quality" in class, but we have provided [a preliminary rubric](rubric.md) for us to work from for the first project. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade.  *The intent here is to to allow you space to explore a model or project that you really enjoy, and to reward you for doing that.* How your grade is calculated appears below.
