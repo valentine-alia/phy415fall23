@@ -1,0 +1,37 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Calc 1
+    chapters:
+    - file: notebooks/calc_1/notation
+    - file: notebooks/calc_1/real_numbers
+    - file: notebooks/calc_1/limits_continuity
+    - file: notebooks/calc_1/derivatives_chain_rule
+    - file: notebooks/calc_1/function_palooza
+  - caption: Calc 2
+    chapters:
+    - file: notebooks/calc_2/diff_vs_int
+    - file: notebooks/calc_2/geo_series
+    - file: notebooks/calc_2/taylor_series
+    - file: notebooks/calc_2/change_of_variables
+    - file: notebooks/calc_2/symbolic_integration
+  - caption: Calc 3
+    chapters:
+    - file: notebooks/calc_3/partial_derivs
+    - file: notebooks/calc_3/differentials
+    - file: notebooks/calc_3/vectors
+    - file: notebooks/calc_3/multi_dim_op
+    - file: notebooks/calc_3/line_integrals
+    - file: notebooks/calc_3/surface_int
+    - file: notebooks/calc_3/greens
+    - file: notebooks/calc_3/stokes
+    - file: notebooks/calc_3/gauss
+  - caption: Further Topics
+    chapters:
+    - file: notebooks/more/fourier_series
+    - file: notebooks/more/stirling
+    - file: notebooks/more/dirac_delta
+    - file: notebooks/more/step_function
+    - file: notebooks/more/gaussians
+    - file: notebooks/more/complex
+    - file: notebooks/more/minkowsky
