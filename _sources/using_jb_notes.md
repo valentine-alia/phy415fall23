@@ -1,4 +1,4 @@
-### Notes to self on how to use jupyter books
+### Alia's notes to self on how to use jupyter books
 
 When making a new .ipynb:
 
