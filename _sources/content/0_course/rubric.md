@@ -14,27 +14,27 @@ We have worked together to define elements of a rubric that matter for making ph
 
 ### Goal: Investigate physical systems (0.30)
  
- - How well does your computational essay <mark>predict</mark> or <mark>explain</mark> the system of interest?
- - How well does your computational essay allow the user to <mark>explore</mark> and <mark>investigate</mark> the system?
+ - How well does your computational essay predict or explain the system of interest?
+ - How well does your computational essay allow the user to explore and investigate the system?
 
 ### Goal: Construct and document a reproducible process (0.10)
 
-- How well does your computational essay <mark>reproduce</mark> your results and claims?
-- How  <mark>well documented</mark> is your computational essay?
+- How well does your computational essay reproduce your results and claims?
+- How  well documented is your computational essay?
 
 ### Goal: Use analytical, computational, and graphical approaches (0.30)
 
-- How well does your computational essay document your <mark>assumptions</mark>?
-- How well does your computational essay produce an <mark>understandable</mark> and <mark>parsimonious</mark> model?
-- How well does your computational essay explain the <mark>limitations</mark> of your analysis?
+- How well does your computational essay document your assumptions?
+- How well does your computational essay produce an understandable and parsimonious model?
+- How well does your computational essay explain the limitations of your analysis?
 
 ### Goal: Provide evidence of the quality of their work
 
-- How well does your computational essay <mark>present</mark>  the case for its claims?
-- How well <mark>validated</mark>  is your model?
+- How well does your computational essay present  the case for its claims?
+- How well validated  is your model?
 
 ### Goal: Collaborate effectively
 
-- How well did you <mark>share</mark>  in the class's knowledge?
+- How well did you share  in the class's knowledge?
   - How well is that documented in your computational essay?
-- How well did you <mark>work with your partner</mark> ? *For those choosing to do so*
+- How well did you work with your partner ? *For those choosing to do so*

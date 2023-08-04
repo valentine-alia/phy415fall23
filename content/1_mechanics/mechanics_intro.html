@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1 - Mechanics &#8212; PHY 415 Fall 2023</title>
+    <title>Intro to Classical Mechanics &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/mechanics_intro';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="31 Aug 2023 - Frames" href="frames.html" />
+    <link rel="prev" title="Resources" href="../0_course/resources.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -154,19 +156,34 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro and Syllabus</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../0_course/syllabus.html">0 - Overview of PHY 415</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0_course/goals.html">Course Objectives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0_course/design.html">Course Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0_course/syllabus.html">0 - Syllabus and Overview of PHY 415</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/goals.html">Course Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/design.html">Course Design</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../0_course/assessments.html">Assessments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0_course/rubric.html">Project Rubrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0_course/calendar.html">Calendar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0_course/environment.html">Classroom Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../0_course/resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/assessments.html">Assessments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/rubric.html">Project Rubrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/calendar.html">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/environment.html">Classroom Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/resources.html">Resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mechanics</span></p>
-<ul class="nav bd-sidenav">
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mechanics and ODEs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to Classical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="frames.html">31 Aug 2023 - Frames</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">E&amp;M and PDEs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/EM_intro.html">Intro to Electricity and Magnetism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Waves and Complex Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/waves_intro.html">Intro to Waves</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Random Processes and Distributions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/distributions_intro.html">Intro to Distributions</a></li>
 </ul>
 
     </div>
@@ -348,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1 - Mechanics</h1>
+    <h1>Intro to Classical Mechanics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -362,9 +379,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="mechanics">
-<h1>1 - Mechanics<a class="headerlink" href="#mechanics" title="Permalink to this headline">#</a></h1>
-<p>words go here</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-classical-mechanics">
+<h1>Intro to Classical Mechanics<a class="headerlink" href="#intro-to-classical-mechanics" title="Permalink to this headline">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -398,6 +414,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../0_course/resources.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Resources</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="frames.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">31 Aug 2023 - Frames</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

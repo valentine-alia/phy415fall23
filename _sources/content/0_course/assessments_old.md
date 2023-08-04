@@ -10,7 +10,7 @@ Summative assessment is typically evaluative and will take the form of course pr
 
 ### Preliminary Rubric
 
-A preliminary rubric has been posted. We will use this rubric for the first out-of-class project evaluation. We will then reflect on it and make changes to collectively as a class.
+[A preliminary rubric](rubric.md) has been posted. We will use this rubric for the first out-of-class project evaluation. We will then reflect on it and make changes to collectively as a class.
 
 ### Resources for Computational Essays
 

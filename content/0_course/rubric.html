@@ -156,19 +156,34 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro and Syllabus</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="syllabus.html">0 - Overview of PHY 415</a></li>
-<li class="toctree-l1"><a class="reference internal" href="goals.html">Course Objectives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="design.html">Course Design</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="syllabus.html">0 - Syllabus and Overview of PHY 415</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="goals.html">Course Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html">Course Design</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="assessments.html">Assessments</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Rubrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calendar.html">Calendar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment.html">Classroom Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assessments.html">Assessments</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Project Rubrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Classroom Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mechanics</span></p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mechanics and ODEs</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/mechanics_intro.html">Intro to Classical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/frames.html">31 Aug 2023 - Frames</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">E&amp;M and PDEs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/EM_intro.html">Intro to Electricity and Magnetism</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Waves and Complex Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/waves_intro.html">Intro to Waves</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Random Processes and Distributions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/distributions_intro.html">Intro to Distributions</a></li>
 </ul>
 
     </div>
@@ -413,41 +428,41 @@ document.write(`
 <div class="section" id="goal-investigate-physical-systems-0-30">
 <h3>Goal: Investigate physical systems (0.30)<a class="headerlink" href="#goal-investigate-physical-systems-0-30" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>How well does your computational essay <mark>predict</mark> or <mark>explain</mark> the system of interest?</p></li>
-<li><p>How well does your computational essay allow the user to <mark>explore</mark> and <mark>investigate</mark> the system?</p></li>
+<li><p>How well does your computational essay predict or explain the system of interest?</p></li>
+<li><p>How well does your computational essay allow the user to explore and investigate the system?</p></li>
 </ul>
 </div>
 <div class="section" id="goal-construct-and-document-a-reproducible-process-0-10">
 <h3>Goal: Construct and document a reproducible process (0.10)<a class="headerlink" href="#goal-construct-and-document-a-reproducible-process-0-10" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>How well does your computational essay <mark>reproduce</mark> your results and claims?</p></li>
-<li><p>How  <mark>well documented</mark> is your computational essay?</p></li>
+<li><p>How well does your computational essay reproduce your results and claims?</p></li>
+<li><p>How  well documented is your computational essay?</p></li>
 </ul>
 </div>
 <div class="section" id="goal-use-analytical-computational-and-graphical-approaches-0-30">
 <h3>Goal: Use analytical, computational, and graphical approaches (0.30)<a class="headerlink" href="#goal-use-analytical-computational-and-graphical-approaches-0-30" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>How well does your computational essay document your <mark>assumptions</mark>?</p></li>
-<li><p>How well does your computational essay produce an <mark>understandable</mark> and <mark>parsimonious</mark> model?</p></li>
-<li><p>How well does your computational essay explain the <mark>limitations</mark> of your analysis?</p></li>
+<li><p>How well does your computational essay document your assumptions?</p></li>
+<li><p>How well does your computational essay produce an understandable and parsimonious model?</p></li>
+<li><p>How well does your computational essay explain the limitations of your analysis?</p></li>
 </ul>
 </div>
 <div class="section" id="goal-provide-evidence-of-the-quality-of-their-work">
 <h3>Goal: Provide evidence of the quality of their work<a class="headerlink" href="#goal-provide-evidence-of-the-quality-of-their-work" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>How well does your computational essay <mark>present</mark>  the case for its claims?</p></li>
-<li><p>How well <mark>validated</mark>  is your model?</p></li>
+<li><p>How well does your computational essay present  the case for its claims?</p></li>
+<li><p>How well validated  is your model?</p></li>
 </ul>
 </div>
 <div class="section" id="goal-collaborate-effectively">
 <h3>Goal: Collaborate effectively<a class="headerlink" href="#goal-collaborate-effectively" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>How well did you <mark>share</mark>  in the class’s knowledge?</p>
+<li><p>How well did you share  in the class’s knowledge?</p>
 <ul>
 <li><p>How well is that documented in your computational essay?</p></li>
 </ul>
 </li>
-<li><p>How well did you <mark>work with your partner</mark> ? <em>For those choosing to do so</em></p></li>
+<li><p>How well did you work with your partner ? <em>For those choosing to do so</em></p></li>
 </ul>
 </div>
 </div>
