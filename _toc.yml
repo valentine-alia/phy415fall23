@@ -1,7 +1,7 @@
 format: jb-book
 root: content/intro
 parts:
-  - caption: Intro and Syllabus
+  - caption: 0 - Intro and Syllabus
     chapters:
     - file: content/0_course/syllabus
       sections:
@@ -12,16 +12,16 @@ parts:
       - file: content/0_course/calendar
       - file: content/0_course/environment
       - file: content/0_course/resources
-  - caption: Mechanics and ODEs
+  - caption: 1 - Mechanics and ODEs
     chapters:
     - file: content/1_mechanics/mechanics_intro.ipynb
     - file: content/1_mechanics/frames
-  - caption: E&M and PDEs
+  - caption: 2 - E&M and PDEs
     chapters:
     - file: content/2_EM/EM_intro.ipynb
-  - caption: Waves and Complex Analysis
+  - caption: 3 - Waves and Complex Analysis
     chapters:
     - file: content/3_waves/waves_intro.ipynb
-  - caption: Random Processes and Distributions
+  - caption: 4 - Random Processes and Distributions
     chapters:
     - file: content/4_distributions/distributions_intro.ipynb
