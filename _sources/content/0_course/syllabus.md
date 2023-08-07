@@ -1,4 +1,4 @@
-# 0 - Syllabus and Overview of PHY 415
+# Syllabus and Overview of PHY 415
 
 In designing this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
 
