@@ -17,18 +17,20 @@ This is not to say that you are on your own. Here's what you can expect from me:
 
 ## Contact Information
 
+### Web page
+-   Web page for this class:
+    [https://valentine-alia.github.io/phy415fall23/content/intro](https://valentine-alia.github.io/phy415fall23/content/intro)
 ### Instructor 
 -  [Prof. Danny Caballero](http://dannycab.github.io) (he/him/his)
 -   Class Meetings: Tuesdays and Thursdays 10:20am-12:10pm (Location: 1300 BPS)
 -   Email: [caball14@msu.edu](mailto:caball14@msu.edu), office: 1310-A BPS
 -   Office hrs: To be scheduled, but I also have an open door policy. I enjoy visiting and talking with you about physics.
--   Web page:
-    [dannycab.github.io/phy415msu/](http://dannycab.github.io/phy415msu/)
+
 
 ### Learning Assistant
 -   [Alia Valentine](https://valentine-alia.github.io/) (she/her/hers)
 -   Email: [valen176@msu.edu](mailto:valen176@msu.edu)
--   Office hrs: TBD, feel free to email me if you want to set up a time. I too enjoy visiting and talking about math and physics.
+-   Office hrs: TBD, feel free to email me if you want to set up a time. I too enjoy visiting and talking with you about math and physics.
 
 ## Grading
 Details about [course activities are here](design.md) and [information regarding assessment is here](assessments.md). Your grade will be comprised of weekly discussion questions and several projects that you will complete in the form of a Jupyter notebook (a "computational essay", which we will discuss later). Your grade on each project is split between completion (50%) and quality (50%). We will collectively define "quality" in class, but we have provided [a preliminary rubric](rubric.md) for us to work from for the first project. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade.  *The intent here is to to allow you space to explore a model or project that you really enjoy, and to reward you for doing that.* How your grade is calculated appears below.
