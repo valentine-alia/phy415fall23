@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/lagrange_1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7 Sep 23 - Lagrangian Dynamics II and Numerical Integration" href="lagrange_2.html" />
+    <link rel="next" title="7 Sep 23 - Numerical Integration and More Lagrangians" href="lagrange_2.html" />
     <link rel="prev" title="31 Aug 23 - Frames and Coordinates" href="frames.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -175,7 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="mechanics_intro.html">Intro to Classical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="frames.html">31 Aug 23 - Frames and Coordinates</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lagrange_2.html">7 Sep 23 - Lagrangian Dynamics II and Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange_2.html">7 Sep 23 - Numerical Integration and More Lagrangians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamical_1.html">12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
 <ul class="nav bd-sidenav">
@@ -384,6 +385,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity">Activity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-oscillator-sho">Simple Harmonic Oscillator (SHO)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-coupled-oscillators">Canonical Coupled Oscillators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#body-problem">2-Body Problem</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-constraint-forces">Adding Constraint Forces</a><ul class="nav section-nav flex-column">
@@ -419,7 +421,7 @@ S = \int_{x_1}^{x_2} f[y(x),\dot{y}(x),x] dx
 <li><p>Use the Euler-Lagrange equation to get a differential equation for the unknown function <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
 <li><p>Solve the differential equation.</p></li>
 </ol>
-<p>We can extend this framework for use in classical mechanics by defining the lagrangian of a system with generalized coordinates <span class="math notranslate nohighlight">\((q_1,\dot{q}_1... q_n,\dot{q}_n)\)</span> as the kinetic energy minus potential energy of a system:</p>
+<p>We can extend this framework for use in classical mechanics by defining the lagrangian of a system with independent, generalized coordinates <span class="math notranslate nohighlight">\((q_1,\dot{q}_1... q_n,\dot{q}_n)\)</span> as the kinetic energy minus potential energy of a system:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} = T(q_1,\dot{q}_1... q_n,\dot{q}_n) - V(q_1,\dot{q}_1... q_n,\dot{q}_n)
@@ -454,6 +456,15 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 <li><p>Write the Lagrangian and derive the two equations of motion.</p></li>
 <li><p>Do all the signs makes sense to you?</p></li>
 <li><p>Could you have arrived at these equations in the newtonian framework?</p></li>
+</ol>
+</div>
+<div class="section" id="body-problem">
+<h3>2-Body Problem<a class="headerlink" href="#body-problem" title="Permalink to this headline">#</a></h3>
+<p>Consider the 2 body problem of a star and an orbiting planet under the force of gravity. Assume the star is stationary.</p>
+<p><strong>✅ Do this</strong></p>
+<ol class="arabic simple">
+<li><p>Write down the energy equations for this system using polar coordinates.</p></li>
+<li><p>Write the Lagrangian and derive 2 equations of motion for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span></p></li>
 </ol>
 </div>
 </div>
@@ -504,7 +515,7 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 </div>
 <div class="section" id="roller-coaster">
 <h3>Roller Coaster<a class="headerlink" href="#roller-coaster" title="Permalink to this headline">#</a></h3>
-<p>Consider 3 roller coaster cars of equal mass <span class="math notranslate nohighlight">\(m\)</span> and positions <span class="math notranslate nohighlight">\(x_1,x_2,x_3\)</span>, constrained to move on a one dimensional “track” defined by <span class="math notranslate nohighlight">\(f(x) = x^4 -2x^2 + 1\)</span>. These cars are also constrained to stay a distance <span class="math notranslate nohighlight">\(d\)</span> apart, since they are linked.</p>
+<p>Consider 3 roller coaster cars of equal mass <span class="math notranslate nohighlight">\(m\)</span> and positions <span class="math notranslate nohighlight">\(x_1,x_2,x_3\)</span>, constrained to move on a one dimensional “track” defined by <span class="math notranslate nohighlight">\(f(x) = x^4 -2x^2 + 1\)</span>. These cars are also constrained to stay a distance <span class="math notranslate nohighlight">\(d\)</span> apart, since they are linked. We’ll only worry about that distance <span class="math notranslate nohighlight">\(d\)</span> in the direction for now (though a fun problem would be to try this problem with a true fixed distance!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span><span class="mf">1.8</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
@@ -584,7 +595,7 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">7 Sep 23 - Lagrangian Dynamics II and Numerical Integration</p>
+        <p class="prev-next-title">7 Sep 23 - Numerical Integration and More Lagrangians</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -609,6 +620,7 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity">Activity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-oscillator-sho">Simple Harmonic Oscillator (SHO)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-coupled-oscillators">Canonical Coupled Oscillators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#body-problem">2-Body Problem</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-constraint-forces">Adding Constraint Forces</a><ul class="nav section-nav flex-column">

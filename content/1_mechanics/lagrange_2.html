@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7 Sep 23 - Lagrangian Dynamics II and Numerical Integration &#8212; PHY 415 Fall 2023</title>
+    <title>7 Sep 23 - Numerical Integration and More Lagrangians &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/lagrange_2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Intro to Electricity and Magnetism" href="../2_EM/EM_intro.html" />
+    <link rel="next" title="12 Sep 2023 - The Dynamical Systems approach and Phase Portraits" href="dynamical_1.html" />
     <link rel="prev" title="5 Sep 23 - Calculus of Varations and Lagrangian Dynamics" href="lagrange_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -175,7 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="mechanics_intro.html">Intro to Classical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="frames.html">31 Aug 23 - Frames and Coordinates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagrange_1.html">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7 Sep 23 - Lagrangian Dynamics II and Numerical Integration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7 Sep 23 - Numerical Integration and More Lagrangians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamical_1.html">12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
 <ul class="nav bd-sidenav">
@@ -371,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>7 Sep 23 - Lagrangian Dynamics II and Numerical Integration</h1>
+    <h1>7 Sep 23 - Numerical Integration and More Lagrangians</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,6 +395,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-equations">Update equations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-constraints-revisited-lagrange-multipliers">(Time Permitting) Constraints Revisited - Lagrange Multipliers</a></li>
 </ul>
             </nav>
         </div>
@@ -405,8 +407,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-lagrangian-dynamics-ii-and-numerical-integration">
-<h1>7 Sep 23 - Lagrangian Dynamics II and Numerical Integration<a class="headerlink" href="#sep-23-lagrangian-dynamics-ii-and-numerical-integration" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-numerical-integration-and-more-lagrangians">
+<h1>7 Sep 23 - Numerical Integration and More Lagrangians<a class="headerlink" href="#sep-23-numerical-integration-and-more-lagrangians" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -440,7 +442,7 @@ v = \dot{x}
 </div>
 <div class="section" id="setting-up-to-numerically-integrate">
 <h2>Setting up to numerically integrate<a class="headerlink" href="#setting-up-to-numerically-integrate" title="Permalink to this headline">#</a></h2>
-<p>We need X things to numerically integrate using <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> in python.</p>
+<p>We need a few things to numerically integrate using <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> in python.</p>
 <div class="section" id="derivatives-function">
 <h3>1. Derivatives Function<a class="headerlink" href="#derivatives-function" title="Permalink to this headline">#</a></h3>
 <p>First, we need to set up a derivatives function that calculates and returns a list of the values of the first order derivatives given an imput list of current values. These current values represent a location in <strong>phase space</strong>. Phase Space is a space that contains all the information about the state of an ODE. The simple harmonic oscillator has a 2D phase space since its state is totally defined by its position and velocity.</p>
@@ -532,7 +534,7 @@ v = \dot{x}
 </div>
 <div class="section" id="back-to-paraboloid-paradise">
 <h2>Back to Paraboloid Paradise<a class="headerlink" href="#back-to-paraboloid-paradise" title="Permalink to this headline">#</a></h2>
-<p>Let’s consider the problem we we’re working on on Tuesday, Where a particle was constrained to move on the surface <span class="math notranslate nohighlight">\(z = r^2\)</span>. The EOM we arrived at are complex and it was unclear if those ODEs had solutions at all. Now That we’re armed with numerical integration, we can tackle the problem.</p>
+<p>Let’s consider the problem we we’re working on on Tuesday, Where a particle was constrained to move on the surface <span class="math notranslate nohighlight">\(z = r^2\)</span>. The EOM we arrived at are complex (<span class="math notranslate nohighlight">\(\ddot{r} = \frac{1}{1 + 4r^2}(- 4rv^2 + r\omega^2 -2gr)\)</span> and <span class="math notranslate nohighlight">\(\ddot{\theta} = -2\frac{v\omega}{r} \)</span>)and it was unclear if those ODEs had solutions at all. Now That we’re armed with numerical integration, we can tackle the problem.</p>
 <p><strong>✅ Do this</strong></p>
 <p>Introduce variables <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> to use our trick for reducing <span class="math notranslate nohighlight">\(&gt;1\)</span> order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below).</p>
 <div class="math notranslate nohighlight">
@@ -545,7 +547,7 @@ v = \dot{x}
 \[\dot{\theta} = ?? \]</div>
 <div class="math notranslate nohighlight">
 \[\dot{\omega} = ??\]</div>
-<!-- -2\dfrac{v\omega}{r} -->
+<!-- -2\frac{v\omega}{r} -->
 <!-- -2*v*omega/r -->
 <p><strong>✅ Do this</strong></p>
 <p>Use these equations to correct the <code class="docutils literal notranslate"><span class="pre">diffyqs</span></code> function in the cell below.</p>
@@ -578,7 +580,15 @@ v = \dot{x}
 </div>
 </div>
 <p><strong>✅ Do this</strong></p>
-<p>Make r vs t and theta vs t plots of this trajectory. Can you think of what that trajectory would look like in cartesian coordinates? Once you’ve thought about that run the cell below to see what the trajectory looks like in 3D. How does the true trajectory compare to your prediction?</p>
+<ol class="arabic">
+<li><p>Make r vs t and theta vs t plots of this trajectory. Can you think of what that trajectory would look like in cartesian coordinates? 2. Run the cell below to see what the trajectory looks like in 3D. How does the true trajectory compare to your prediction?</p></li>
+<li><p>Change the initial condtion to examine the following cases and plot the trajectories in 3d:</p>
+<p>a. Particle starts from rest and is let go</p>
+<p>b. Particle starts at a given height and is given a low speed (less than needed to orbit)</p>
+<p>c. Particle starts at a given height and is given a low speed (more than needed to orbit)</p>
+<p>d. Can you find a flat horizontal circular orbit?</p>
+</li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parabaloid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
@@ -665,6 +675,58 @@ v = \dot{x}
 <p>We don’t expect you memorize these approaches or to derive them, but to understand how they work and what their limitations are.</p>
 </div>
 </div>
+<div class="section" id="time-permitting-constraints-revisited-lagrange-multipliers">
+<h2>(Time Permitting) Constraints Revisited - Lagrange Multipliers<a class="headerlink" href="#time-permitting-constraints-revisited-lagrange-multipliers" title="Permalink to this headline">#</a></h2>
+<p>Thus far we’ve been treating constrained motion problems by including the constraint information in the generalized coordinates themselves, but there is a more general approach for these kinds of problems - Lagrange Multipliers. Toward finding a modified Euler-Lagrange equation that deals with these, we can start by looking at a way that one might arrive at the original Euler-Lagrange equation.</p>
+<p>We start By defining <span class="math notranslate nohighlight">\(L = T-V\)</span> and we define the action of our system by:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int_{t_1}^{t_2}(\mathbf{q},\dot{\mathbf{q}},t) dt
+\]</div>
+<p>Via the principle of least action we know that <span class="math notranslate nohighlight">\(\delta S = 0\)</span> for our ideal path since the <span class="math notranslate nohighlight">\(S\)</span> integral is stationary along that path. If we nudge our generalized coordinates a bit:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{q} \rightarrow \mathbf{q} + \delta \mathbf{q} 
+\]</div>
+<p>This lets us define a small change in the lagrangian:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta L = \frac{\partial L}{\partial \mathbf{q}} \cdot \delta \mathbf{q} + \frac{\partial L}{\partial \dot{\mathbf{q}}}\cdot \delta \dot{\mathbf{q}}
+\]</div>
+<p>Which in-turn gives us a small change in the action:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta S = \int_{t_1}^{t_2} \left(  \frac{\partial L}{\partial \mathbf{q}} \cdot \delta \mathbf{q} + \frac{\partial L}{\partial \dot{\mathbf{q}}}\cdot \delta \dot{\mathbf{q}} \right) dt 
+\]</div>
+<p>Integrating by parts gives:
+$<span class="math notranslate nohighlight">\(
+= \int_{t_1}^{t_2} \left(\frac{\partial L}{\partial \mathbf{q}}\cdot  \delta \mathbf{q} - \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\mathbf{q}}} \right)\cdot\delta\mathbf{q}  \right)dt + \left[\frac{\partial L}{\partial \dot{\mathbf{q}}}\cdot \delta \mathbf{q}\right]_{t_1}^{t_2}
+= \int_{t_1}^{t_2} \left(\frac{\partial L}{\partial \mathbf{q}} - \frac{d}{dt}\left(\frac{\partial L}{\partial \mathbf{q}}\right) \right)\cdot \delta\mathbf{q} dt
+\)</span>$</p>
+<p>Which finally lets us argue:
+$<span class="math notranslate nohighlight">\(
+\sum_{i=0}^n \left(\frac{\partial L}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right)  \right) \delta q_i = 0
+\)</span>$</p>
+<p>Since our generalized coordinates are independent, this gives us the original Euler-Lagrange equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right) = 0
+\]</div>
+<p>But let’s say our coordinates are constrained by some <span class="math notranslate nohighlight">\(f(\mathbf{q},t) = 0\)</span>. Noting that <span class="math notranslate nohighlight">\(\delta f = \frac{\partial f}{\partial \mathbf{q}}\cdot \delta \mathbf{q} = 0\)</span>, we can modify the above equation to read:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^n \left(\frac{\partial L}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right)  + \lambda \frac{\partial f}{\partial q_i}\right) \delta q_i = 0
+\]</div>
+<p>Where we’ve introduced <span class="math notranslate nohighlight">\(\lambda\)</span>, a <strong>lagrange multiplier</strong>. This gives us a new modified version of the Euler-Lagrange Equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right)  + \lambda \frac{\partial f}{\partial q_i} = 0
+\]</div>
+<p>The beautiful thing about this equation is that <span class="math notranslate nohighlight">\(\lambda\)</span> itself often will take the form of the constraint force itself (though this is nuanced and depends on the system at hand). So if you do want to know what your constraint forces are - for example say you’re designing a roller coaster and you need to know the forces that passengers experience for safety reasons - you can still obtain them via the lagrangian approach, which still lets you bypass the Newtonian framework.</p>
+<p><strong>✅ Do this</strong></p>
+<p>Use the modified Euler-Lagrange equation with generalized coordinates <span class="math notranslate nohighlight">\(\mathbf{q} = (r,\theta, z)\)</span> and constraint equation <span class="math notranslate nohighlight">\(f = r^2 - z = 0\)</span> to find the equations of motion for the paraboloid problem. Also solve for <span class="math notranslate nohighlight">\(\lambda\)</span>. What is the physical meaning of this lagrange multiplier?</p>
+<p>Note: The procedure here is a bit different now, since you impose the constraint <strong>after</strong> iterating the modified Euler-Lagrange equation 3 times. Then you’ll have a system of equations to solve for <span class="math notranslate nohighlight">\(\ddot{r}\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -708,11 +770,11 @@ v = \dot{x}
       </div>
     </a>
     <a class="right-next"
-       href="../2_EM/EM_intro.html"
+       href="dynamical_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Electricity and Magnetism</p>
+        <p class="prev-next-title">12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -747,6 +809,7 @@ v = \dot{x}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-equations">Update equations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-constraints-revisited-lagrange-multipliers">(Time Permitting) Constraints Revisited - Lagrange Multipliers</a></li>
 </ul>
   </nav></div>
 
