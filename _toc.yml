@@ -18,6 +18,7 @@ parts:
     - file: content/1_mechanics/frames
     - file: content/1_mechanics/lagrange_1
     - file: content/1_mechanics/lagrange_2
+    - file: content/1_mechanics/dynamical_1
   - caption: 2 - E&M and PDEs
     chapters:
     - file: content/2_EM/EM_intro.ipynb

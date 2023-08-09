@@ -175,7 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="mechanics_intro.html">Intro to Classical Mechanics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">31 Aug 23 - Frames and Coordinates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagrange_1.html">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lagrange_2.html">7 Sep 23 - Lagrangian Dynamics II and Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange_2.html">7 Sep 23 - Numerical Integration and More Lagrangians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamical_1.html">12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
 <ul class="nav bd-sidenav">
@@ -482,6 +483,7 @@ x = r\cos \phi \hspace{1in} y = r\sin \phi
 \[
 r = \sqrt{x^2 + y^2} \hspace{1in} \phi = \arctan(y / x)
 \]</div>
+<p>This also let’s us write kinetic energy as <span class="math notranslate nohighlight">\(T = \frac{1}{2}m(\dot{r} + r^2\dot{\phi}^2)\)</span>.</p>
 <p>We’d like to know how to write down Newton’s second law in this coordinate system, but this is not as simple as before because the unit vectors in polar coordinate are NOT constant. We’ll denote the unit vectors for polar coordinates by <span class="math notranslate nohighlight">\(\hat{\mathbf{r}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\phi}}\)</span>. <span class="math notranslate nohighlight">\(\hat{\mathbf{r}}\)</span> points in the direction of increasing <span class="math notranslate nohighlight">\(r\)</span> with <span class="math notranslate nohighlight">\(\phi\)</span> fixed, and similarly <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\phi}}\)</span> points in the direction of increasing <span class="math notranslate nohighlight">\(\phi\)</span> with <span class="math notranslate nohighlight">\(r\)</span> fixed.</p>
 <p>However, this doesen’t stop us from being able to break down a net force into its components along each unit vector:</p>
 <div class="math notranslate nohighlight">
@@ -504,6 +506,8 @@ r = \sqrt{x^2 + y^2} \hspace{1in} \phi = \arctan(y / x)
 <p>Find <span class="math notranslate nohighlight">\(\dot{\mathbf{r}}\)</span> by differentiating <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> with respect to time. (see hint below)</p>
 <p><strong>✅ Do this</strong></p>
 <p>Find <span class="math notranslate nohighlight">\(\ddot{\mathbf{r}}\)</span> by differentiating <span class="math notranslate nohighlight">\(\dot{\mathbf{r}}\)</span> with respect to time. Then find <span class="math notranslate nohighlight">\(F_r\)</span> and <span class="math notranslate nohighlight">\(F_\phi\)</span>. (see hint below)</p>
+<!--\dot{\mathbf{r}} = \dot{r}\hat{r} + r\dot{\phi}\hat{phi} -->
+<!-- -->
 <p>Hint: During these problems, you’ll need to find expressions for <span class="math notranslate nohighlight">\(\frac{d\hat{\mathbf{r}}}{dt}\)</span> and <span class="math notranslate nohighlight">\(\frac{d\hat{\boldsymbol{\phi}}}{dt}\)</span>, which <a class="reference external" href="https://raw.githubusercontent.com/valentine-alia/phy415fall23/main/content/assets/frames_hint.pdf">these pictures</a> might help with.</p>
 <div class="section" id="angular-momentum">
 <h4>Angular momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">#</a></h4>
