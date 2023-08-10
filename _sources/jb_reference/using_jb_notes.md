@@ -8,6 +8,6 @@ When making a new .ipynb:
 When updating the book:
 
 1. Save all changes to files
-2. cd to folder 1 **beneath** the folder of the book and run `jupyter-book build --all book_name`
+2. cd to folder 1 **beneath** the folder of the book and run `jupyter-book build --all book_name`. Drop the -all to just build new things.
 3. push the changes on the main branch of the repo
 4. cd to the book's folder and run `ghp-import -n -p -f _build/html`

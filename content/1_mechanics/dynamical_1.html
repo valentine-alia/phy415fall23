@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12 Sep 2023 - The Dynamical Systems approach and Phase Portraits &#8212; PHY 415 Fall 2023</title>
+    <title>12 Sep 23 - The Dynamical Systems Approach and Phase Portraits &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/dynamical_1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Intro to Electricity and Magnetism" href="../2_EM/EM_intro.html" />
+    <link rel="next" title="14 Sep 23 - Dynamical Systems Continued and Eigenvalues" href="dynamical_2.html" />
     <link rel="prev" title="7 Sep 23 - Numerical Integration and More Lagrangians" href="lagrange_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -176,7 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="frames.html">31 Aug 23 - Frames and Coordinates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagrange_1.html">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagrange_2.html">7 Sep 23 - Numerical Integration and More Lagrangians</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12 Sep 23 - The Dynamical Systems Approach and Phase Portraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamical_2.html">14 Sep 23 - Dynamical Systems Continued and Eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CHAOS.html">19 Sep 23 - CHAOS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
 <ul class="nav bd-sidenav">
@@ -372,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</h1>
+    <h1>12 Sep 23 - The Dynamical Systems Approach and Phase Portraits</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,9 +402,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-large-angle-pendulum">The Large Angle Pendulum</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-new-phase-portrait">Make a new phase portrait</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-fixed-points-in-2-dimensions">(Time Permitting) Fixed Points in 2 Dimensions</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-fixed-points-in-2-dimensions">(Time Permitting) Fixed Points in 2 Dimensions</a></li>
 </ul>
             </nav>
         </div>
@@ -414,8 +416,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-2023-the-dynamical-systems-approach-and-phase-portraits">
-<h1>12 Sep 2023 - The Dynamical Systems approach and Phase Portraits<a class="headerlink" href="#sep-2023-the-dynamical-systems-approach-and-phase-portraits" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-the-dynamical-systems-approach-and-phase-portraits">
+<h1>12 Sep 23 - The Dynamical Systems Approach and Phase Portraits<a class="headerlink" href="#sep-23-the-dynamical-systems-approach-and-phase-portraits" title="Permalink to this headline">#</a></h1>
 <p>Up to now, most of your work with models in physics are those you can solve analytically in terms of known functions. Think about solving differential equations that produce polynomials or sines and cosines.</p>
 <p>But what happens when the solution to the problem is not obviously tractable in an analytical form. Rather, how can we investigate systems that are new to us?</p>
 <p>In today’s activity you will:</p>
@@ -892,8 +894,10 @@ document.write(`
 <p><strong>✅ Do this</strong></p>
 <p>Find the fixed points of this system. Are they the same as in the SHO case? If they’re different, what about this system makes it different?</p>
 </div>
+</div>
 <div class="section" id="time-permitting-fixed-points-in-2-dimensions">
-<h3>(Time Permitting) Fixed Points in 2 Dimensions<a class="headerlink" href="#time-permitting-fixed-points-in-2-dimensions" title="Permalink to this headline">#</a></h3>
+<h2>(Time Permitting) Fixed Points in 2 Dimensions<a class="headerlink" href="#time-permitting-fixed-points-in-2-dimensions" title="Permalink to this headline">#</a></h2>
+<p>If we don’t get to this in class today don’t worry, we’ll start out with this on thursday!</p>
 <p>Now that we’ve stepped into two dimensional phase space, the amount of interesting geometry that our solutions can have is much greater. In particular, local behavior near fixed points can now exhibit much more complex behavior than just being stable or not, as we can see in this figure.</p>
 <img src="https://www.researchgate.net/publication/346614443/figure/fig11/AS:964859927728140@1607051941592/Classification-of-fixed-points-for-two-dimensional-nonlinear-systems-As-a-function-of.png" alt="Large Angle Pendulum" width="600"/>
 <p>So how do we definitively say what the behavior of our system is like near a fixed point? The anwer lies in <strong>linearization</strong>. A linear system in 2d is a system of the form:</p>
@@ -945,9 +949,8 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
 </ul>
 <p>In fact one can learn quite a bit more from a these eigenvalues (see strogatz chapter 6 or section 5.4 <a class="reference external" href="https://users.math.msu.edu/users/gnagy/teaching/ode.pdf">here</a>), but these charactarizations are a great starting point.</p>
 <p><strong>✅ Do this</strong></p>
-<p>Calculate the Jacobian matrix <span class="math notranslate nohighlight">\(A\)</span> for a fixed point of the large angle pendulum and find its eigenvalues to charactarize the pendulum’s behavior near this fixed point. Does this behavior match your intuition? Does this characterization change if you add drag to the model?</p>
-</div>
-</div>
+<p>Calculate the Jacobian matrix <span class="math notranslate nohighlight">\(A\)</span> for a fixed point of the large angle pendulum.</p>
+<!-- and find its eigenvalues to charactarize the pendulum's behavior near this fixed point. Does this behavior match your intuition? Does this characterization change if you add drag to the model? --></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -991,11 +994,11 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
       </div>
     </a>
     <a class="right-next"
-       href="../2_EM/EM_intro.html"
+       href="dynamical_2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Electricity and Magnetism</p>
+        <p class="prev-next-title">14 Sep 23 - Dynamical Systems Continued and Eigenvalues</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1035,9 +1038,9 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-large-angle-pendulum">The Large Angle Pendulum</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-new-phase-portrait">Make a new phase portrait</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-fixed-points-in-2-dimensions">(Time Permitting) Fixed Points in 2 Dimensions</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-fixed-points-in-2-dimensions">(Time Permitting) Fixed Points in 2 Dimensions</a></li>
 </ul>
   </nav></div>
 
