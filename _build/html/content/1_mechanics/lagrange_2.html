@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/lagrange_2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="12 Sep 2023 - The Dynamical Systems approach and Phase Portraits" href="dynamical_1.html" />
+    <link rel="next" title="12 Sep 23 - The Dynamical Systems Approach and Phase Portraits" href="dynamical_1.html" />
     <link rel="prev" title="5 Sep 23 - Calculus of Varations and Lagrangian Dynamics" href="lagrange_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -176,7 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="frames.html">31 Aug 23 - Frames and Coordinates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagrange_1.html">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7 Sep 23 - Numerical Integration and More Lagrangians</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamical_1.html">12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamical_1.html">12 Sep 23 - The Dynamical Systems Approach and Phase Portraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamical_2.html">14 Sep 23 - Dynamical Systems Continued and Eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CHAOS.html">19 Sep 23 - CHAOS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
 <ul class="nav bd-sidenav">
@@ -395,7 +397,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-equations">Update equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-constraints-revisited-lagrange-multipliers">(Time Permitting) Constraints Revisited - Lagrange Multipliers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerically-analyzing-this-system">Numerically analyzing this system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-the-energy">Analysis of the Energy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-analysis">Angular Momentum Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-revisited-lagrange-multipliers">Constraints Revisited - Lagrange Multipliers</a></li>
 </ul>
             </nav>
         </div>
@@ -562,7 +569,7 @@ v = \dot{x}
 
     <span class="n">omegadot</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">omegadot</span> <span class="c1"># solution will return in this order, but integrated (r,v,ω,ωdot)</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">omegadot</span> <span class="c1"># solution will return in this order, but integrated (r,v,theta,ω)</span>
 
 <span class="c1"># 2. Time Setup</span>
 <span class="n">tmax</span> <span class="o">=</span> <span class="mi">40</span>
@@ -675,8 +682,104 @@ v = \dot{x}
 <p>We don’t expect you memorize these approaches or to derive them, but to understand how they work and what their limitations are.</p>
 </div>
 </div>
-<div class="section" id="time-permitting-constraints-revisited-lagrange-multipliers">
-<h2>(Time Permitting) Constraints Revisited - Lagrange Multipliers<a class="headerlink" href="#time-permitting-constraints-revisited-lagrange-multipliers" title="Permalink to this headline">#</a></h2>
+<div class="section" id="numerically-analyzing-this-system">
+<h2>Numerically analyzing this system<a class="headerlink" href="#numerically-analyzing-this-system" title="Permalink to this headline">#</a></h2>
+<div class="section" id="analysis-of-the-energy">
+<h3>Analysis of the Energy<a class="headerlink" href="#analysis-of-the-energy" title="Permalink to this headline">#</a></h3>
+<p>We know that this is a system that should conserve energy. There’s no dissipation and there’s only conservatives forces acting to change the speed of the object. The contact forces only change direction, so the system is “conservative”.</p>
+<p>Let’s compute the energy:</p>
+<div class="math notranslate nohighlight">
+\[T = \dfrac{m}{2}\left(\dot{r}^2 + r^2\dot{\theta}^2 + \dot{z}^2\right) = (\dot{r}^2 + r^2\dot{\theta}^2 + 4r^2\dot{r}^2)\]</div>
+<div class="math notranslate nohighlight">
+\[U = mgz = mgr^2\]</div>
+<p>We have all these quantities except <span class="math notranslate nohighlight">\(m\)</span>. Let’s divide it out for just set it to 1. The code below computes and plots the energies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unpack solution in a convienient way</span>
+<span class="n">r</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">omega</span> <span class="o">=</span> <span class="n">solved</span><span class="o">.</span><span class="n">y</span>
+
+<span class="c1">## Kinetic</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">## Potetial</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">g</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1">## Total</span>
+<span class="n">E</span><span class="o">=</span><span class="n">T</span><span class="o">+</span><span class="n">U</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kinetic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Potential&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Energy/mass&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c4c72c7cdcbd3576b9848ea76db7cde4c7193ba58e6c3abedbcbadd90acfefa8.png" src="../../_images/c4c72c7cdcbd3576b9848ea76db7cde4c7193ba58e6c3abedbcbadd90acfefa8.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="angular-momentum-analysis">
+<h2>Angular Momentum Analysis<a class="headerlink" href="#angular-momentum-analysis" title="Permalink to this headline">#</a></h2>
+<p>We argued that the equation
+$<span class="math notranslate nohighlight">\(\dfrac{d}{dt}\left(mr^2\dot{\theta}\right) = 0\)</span>$
+was a statement of conservation of the z-component of angular momentum.</p>
+<p>Recall that angular momentum is a vector quantity and can be conserved in total, but also a given component might be conserved while others are not. Let’s compute the angular momentum and see what the deal is. This will involve taken cross products in cylindrical coordinates (which also obey the right hand rule!).</p>
+<p>Starting with the classical relationship:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\mathbf{L}}{m} = \mathbf{r} \times \mathbf{v}\]</div>
+<p>We can write down position and velocity vectors in general:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} = r\hat{r} + z\hat{z}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} = v_r\hat{r} + v_{\theta}\hat{\theta} + v_z \hat{z}\]</div>
+<p>Let’s take the cross product:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} \times \mathbf{v} = \left(r\hat{r} + z\hat{z}\right) \times
+\left( v_r\hat{r} + v_{\theta}\hat{\theta} + v_z \hat{z} \right)\]</div>
+<p>Which is</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\mathbf{L}}{m} = \mathbf{r} \times \mathbf{v} = -(z v_{\theta})\hat{r} + (z v_r -r v_z)\hat{\theta} + rv_{\theta}\hat{z}\]</div>
+<p>Or:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_r}{m} = -(z v_{\theta})\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_{\theta}}{m} = (z v_r -r v_z)\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_z}{m} = rv_{\theta}\]</div>
+<p>Yep, <span class="math notranslate nohighlight">\(L_z\)</span> just pops out:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_z}{m} = rv_{\theta} = r^2\dot{\theta}\]</div>
+<div class="math notranslate nohighlight">
+\[L_z = m r^2\dot{\theta}\]</div>
+<p>A good physics question is ‘why?’</p>
+<p>Let’s plot it</p>
+<p><strong>✅ Do this</strong></p>
+<p>Calculate and plot <span class="math notranslate nohighlight">\(L_z /m\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>✅ Do this</strong></p>
+<p>Calculate <span class="math notranslate nohighlight">\(L_r /m\)</span>, <span class="math notranslate nohighlight">\(L_\theta / m\)</span>, and <span class="math notranslate nohighlight">\(L_{tot} /m\)</span>. Plot these against time alongside <span class="math notranslate nohighlight">\(L_z/m\)</span>, all on the same plot. What do you observe?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="constraints-revisited-lagrange-multipliers">
+<h2>Constraints Revisited - Lagrange Multipliers<a class="headerlink" href="#constraints-revisited-lagrange-multipliers" title="Permalink to this headline">#</a></h2>
 <p>Thus far we’ve been treating constrained motion problems by including the constraint information in the generalized coordinates themselves, but there is a more general approach for these kinds of problems - Lagrange Multipliers. Toward finding a modified Euler-Lagrange equation that deals with these, we can start by looking at a way that one might arrive at the original Euler-Lagrange equation.</p>
 <p>We start By defining <span class="math notranslate nohighlight">\(L = T-V\)</span> and we define the action of our system by:</p>
 <div class="math notranslate nohighlight">
@@ -774,7 +877,7 @@ $<span class="math notranslate nohighlight">\(
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">12 Sep 2023 - The Dynamical Systems approach and Phase Portraits</p>
+        <p class="prev-next-title">12 Sep 23 - The Dynamical Systems Approach and Phase Portraits</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -809,7 +912,12 @@ $<span class="math notranslate nohighlight">\(
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-equations">Update equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-permitting-constraints-revisited-lagrange-multipliers">(Time Permitting) Constraints Revisited - Lagrange Multipliers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerically-analyzing-this-system">Numerically analyzing this system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-the-energy">Analysis of the Energy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-analysis">Angular Momentum Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-revisited-lagrange-multipliers">Constraints Revisited - Lagrange Multipliers</a></li>
 </ul>
   </nav></div>
 
