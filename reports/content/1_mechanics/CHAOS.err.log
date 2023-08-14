@@ -1,0 +1,75 @@
+Traceback (most recent call last):
+  File "C:\Users\walki\AppData\Roaming\Python\Python39\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\ProgramData\Anaconda3\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def DDP(t,curr_vals, beta,omega_natural,gamma,omega_drive): 
+    # Derivatives function for solve_ivp
+    theta,v = curr_vals 
+    thetadot = v
+    vdot = -2*beta*v - omega_natural * np.sin(theta) + gamma*omega_natural*np.cos(omega_drive*t)
+    return thetadot,vdot
+
+# Parameters and initial conditions (chosen so that they give chaos)
+beta = 0.375/2
+omega_natural = 1.5**2
+omega_drive = 1
+gamma = 1.5
+initial_condition = [0.,0.]
+initial_condition2 = [0.,0.01]
+
+# Time Setup
+tmax = 100.
+dt = 0.01
+t = np.arange(0,tmax, dt) 
+tspan = (t[0],t[-1])
+
+# Call integrator for each initial condition
+solved = solve_ivp(DDP,tspan,initial_condition,t_eval = t, args = (beta,omega_natural,gamma,omega))
+solved2 = solve_ivp(DDP,tspan,initial_condition2,t_eval = t, args = (beta,omega_natural,gamma,omega))
+
+# Plotting
+fig = plt.figure(figsize = (15,6))
+plt.subplot(1,2,1)
+plt.plot(t,solved.y[0],label =  "IC = " + str(initial_condition))
+plt.plot(t,solved2.y[0], label = "IC = " + str(initial_condition2) )
+plt.xlabel("t")
+plt.ylabel(r"$\theta$")
+plt.legend()
+plt.grid()
+plt.subplot(1,2,2)
+plt.plot(solved.y[0],solved.y[1], label =  "IC = " + str(initial_condition))
+plt.plot(solved2.y[0],solved2.y[1], label = "IC = " + str(initial_condition2))
+plt.xlabel(r"$\theta$")
+plt.ylabel(r"$v$")
+plt.legend()
+plt.grid()
+plt.show()
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Input [1;32mIn [4][0m, in [0;36m<cell line: 23>[1;34m()[0m
+[0;32m     20[0m tspan [38;5;241m=[39m (t[[38;5;241m0[39m],t[[38;5;241m-[39m[38;5;241m1[39m])
+[0;32m     22[0m [38;5;66;03m# Call integrator for each initial condition[39;00m
+[1;32m---> 23[0m solved [38;5;241m=[39m solve_ivp(DDP,tspan,initial_condition,t_eval [38;5;241m=[39m t, args [38;5;241m=[39m (beta,omega_natural,gamma,[43momega[49m))
+[0;32m     24[0m solved2 [38;5;241m=[39m solve_ivp(DDP,tspan,initial_condition2,t_eval [38;5;241m=[39m t, args [38;5;241m=[39m (beta,omega_natural,gamma,omega))
+[0;32m     26[0m [38;5;66;03m# Plotting[39;00m
+
+[1;31mNameError[0m: name 'omega' is not defined
+NameError: name 'omega' is not defined
+
