@@ -21,6 +21,7 @@ parts:
     - file: content/1_mechanics/dynamical_1
     - file: content/1_mechanics/dynamical_2
     - file: content/1_mechanics/CHAOS
+    - file: content/1_mechanics/ODE_games
   - caption: 2 - E&M and PDEs
     chapters:
     - file: content/2_EM/EM_intro.ipynb
