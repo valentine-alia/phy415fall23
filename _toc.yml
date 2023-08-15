@@ -25,9 +25,20 @@ parts:
   - caption: 2 - E&M and PDEs
     chapters:
     - file: content/2_EM/EM_intro.ipynb
+    - file: content/2_EM/E_fields_graphing_184
+    - file: content/2_EM/laplace_eq
+    - file: content/2_EM/more_PDEs
+    - file: content/2_EM/relaxation
+    - file: content/2_EM/B_fields
+    - file: content/2_EM/EM_waves
   - caption: 3 - Waves and Complex Analysis
     chapters:
     - file: content/3_waves/waves_intro.ipynb
+    - file: content/3_waves/normal_modes
+    - file: content/3_waves/mech_waves
+    - file: content/3_waves/wave_examples
+    - file: content/3_waves/complex
+    - file: content/3_waves/DFT_FFT
   - caption: 4 - Random Processes and Distributions
     chapters:
     - file: content/4_distributions/distributions_intro.ipynb
