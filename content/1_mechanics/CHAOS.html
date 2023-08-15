@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="21 Sept 23 - Activity: ODE Games" href="ODE_games.html" />
-    <link rel="prev" title="14 Sep 23 - Dynamical Systems Continued and Eigenvalues" href="dynamical_2.html" />
+    <link rel="prev" title="14 Sep 23 - Dynamical Systems Continued" href="dynamical_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -177,17 +177,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lagrange_1.html">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagrange_2.html">7 Sep 23 - Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dynamical_1.html">12 Sep 23 - The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamical_2.html">14 Sep 23 - Dynamical Systems Continued and Eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamical_2.html">14 Sep 23 - Dynamical Systems Continued</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">19 Sep 23 - CHAOS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ODE_games.html">21 Sept 23 - Activity: ODE Games</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../2_EM/EM_intro.html">Intro to Electricity and Magnetism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/E_fields_graphing_184.html">26 Sep 23 - Graphing Electric Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/laplace_eq.html">28 Sep 23 - Laplace’s Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/more_PDEs.html">3 Oct 23 - More PDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/relaxation.html">5 sep 23 - Method of Relaxation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/B_fields.html">10 Oct 23 - Magnetic Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/EM_waves.html">Electromagnetic Waves &amp; the Wave Equation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Complex Analysis</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/waves_intro.html">Intro to Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/normal_modes.html">17 Oct 23 - Normal Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/mech_waves.html">19 Oct 23 - Mechanical Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/wave_examples.html">26 Oct 23 - Examples of Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/complex.html">31 Oct 23 - Complex Analysis &amp; the Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/DFT_FFT.html">2 Nov 23 - Discrete and Fast Fourier Transforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Random Processes and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -641,7 +652,7 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 
 <span class="c1"># Plotting</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">dpi</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">poincare_theta</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="c1">## CHANGE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">poincare_theta</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Poincaré Section&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$v$&quot;</span><span class="p">)</span>
@@ -712,7 +723,7 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">14 Sep 23 - Dynamical Systems Continued and Eigenvalues</p>
+        <p class="prev-next-title">14 Sep 23 - Dynamical Systems Continued</p>
       </div>
     </a>
     <a class="right-next"
