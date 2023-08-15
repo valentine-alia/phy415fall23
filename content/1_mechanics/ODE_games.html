@@ -391,6 +391,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-use-analytical-computational-and-graphical-approaches-0-30">Goal: Use analytical, computational, and graphical approaches (0.30)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-provide-evidence-of-the-quality-of-their-work">Goal: Provide evidence of the quality of their work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-collaborate-effectively">Goal: Collaborate effectively</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">Starter Code</a></li>
 </ul>
 </li>
 </ul>
@@ -407,33 +408,48 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-activity-ode-games">
 <h1>21 Sept 23 - Activity: ODE Games<a class="headerlink" href="#sept-23-activity-ode-games" title="Permalink to this headline">#</a></h1>
 <p>Y’all have worked with several different ODEs. We’ve learned that we can use phase space to investigate different potential families of solutions. We’ve learned how to read information from phase space for systems we are familiar with like the SHO and the large angle Pendulum. We’ve also learned how to use numerical integration to find trajectories of the system in time and in phase space, and how chaotic systems behave. Today, you will investigate a new model. There’s quite a few well-known models.</p>
-<p>Some of these models are listed below with links to Wikipedia articles describing them or the ideas related to them. <em>This is for reference, you don’t need to read or understand anything deeply from these articles.</em></p>
+<p>Some of these models are listed below with links to articles describing them or the ideas related to them. <em>This is for reference, you don’t need to read or understand anything deeply from these articles.</em></p>
 <p>A few 2nd order models:</p>
-<ol class="arabic simple" start="2">
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Double-well_potential">Double Well Potential:</a></p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\dot{x}=y; \dot{y} = -x+y(1-x^2)\]</div>
-<ol class="arabic simple" start="4">
+<ol class="arabic simple" start="2">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Stability_theory">Dipole Fixed Points:</a></p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\dot{x} = 2xy; \dot{y} = y^2 - x^2\]</div>
-<ol class="arabic simple" start="5">
+<ol class="arabic simple" start="3">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Anharmonicity">Anharmonic Oscillator (Symmetric)</a></p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[m\ddot{x} + b\dot{x} + k_1 x + k_2 x^3 = 0\]</div>
-<ol class="arabic simple" start="6">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Duffing_equation">Duffing Oscillator:</a></p></li>
+<ol class="arabic simple" start="4">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Duffing_equation">Duffing Oscillator</a></p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\ddot{x} + x + \epsilon x^3=0\]</div>
-<p>I want to let your group decide what you want to explore. But a little guidance when making those choices:</p>
-<ol class="arabic simple" start="2">
-<li><p>The remaining oscillators are relatively straightforward to implement in the code below if you break them into 1st order ODEs. Remember that you have to do that!</p></li>
-<li><p>There’s a few of these models with parameters, you can choose those, but maybe look into reasonable values. These models are likely the most challenging in this assignment because you have to keep track of and pass parameters.</p></li>
-<li><p>Finally, some of these models have a time depdendent component, i.e., some <span class="math notranslate nohighlight">\(F(t)\)</span>. Add these dependences once you’ve explored the non-time-dependent version.</p></li>
+<ol class="arabic simple" start="5">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Glycolytic_oscillation">Glycolysis model</a></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{x} = -x + ay + x^2 y ; \dot{y} = b - ay - x^2y\]</div>
+<ol class="arabic simple" start="6">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Kuramoto_model">Coupled synchronizing oscillators</a>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{\theta}_1 = \omega_1 + K_1 \sin(\theta_2 - \theta_1) ; \dot{\theta}_2 = \omega_2 + K_2\sin(\theta_1 - \theta_2) \]</div>
+<ol class="arabic simple" start="7">
+<li><p><a class="reference external" href="https://www.princeton.edu/~stonelab/Publications/pdfs/From%20Howard/JFM/StoneNadimStrogatzChaoticStreamlinesJFM1990.pdf">Drop in stokes flow</a></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{x} = \frac{\sqrt{2}}{4}x (x-1)\sin(\phi); \dot{\phi} = \frac{1}{2}\left[\beta - \frac{1}{\sqrt 2}\cos(\phi) - \frac{1}{8\sqrt{2}}x\cos(\phi)\right]\]</div>
+<p>We want to let your group decide what you want to explore. But a little guidance when making those choices:</p>
+<ol class="arabic simple">
+<li><p>The 2nd order oscillators are relatively straightforward to implement in the code below if you break them into 1st order ODEs. Remember that you have to do that!</p></li>
+<li><p>Several of these models have parameters, which you can choose, but maybe look into reasonable values. These models are likely the more challenging for this assignment because you have to keep track of and pass parameters.</p></li>
+<li><p>Some of these models have a versions with time depdendent components , i.e., some <span class="math notranslate nohighlight">\(F(t)\)</span>. Adding these components once you’ve explored the non-time-dependent version gives a ton more to explore!</p></li>
 </ol>
 <div class="section" id="activity">
 <h2>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">#</a></h2>
@@ -477,6 +493,76 @@ document.write(`
 </li>
 <li><p>How well did you <mark>work with your partner</mark> ? <em>For those choosing to do so</em></p></li>
 </ul>
+<p>Below is some starter code to help you get started.</p>
+</div>
+<div class="section" id="starter-code">
+<h3>Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">#</a></h3>
+<p>Here’s some working code from last week when we looked at the Van der Pol oscillator to help you get started on your invesigation.</p>
+<p>For reference, the Van der Pol oscillator is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{x} = v \hspace{1in} \dot{v} = -\mu (x^2 - 1)v - x
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="k">def</span> <span class="nf">VP_eqn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
+    <span class="n">xdot</span><span class="p">,</span> <span class="n">vdot</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="o">-</span><span class="n">mu</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">v</span> <span class="o">-</span> <span class="n">x</span><span class="p">]</span> <span class="c1">## CHANGE</span>
+    <span class="k">return</span> <span class="n">xdot</span><span class="p">,</span> <span class="n">vdot</span>
+
+<span class="k">def</span> <span class="nf">VP_phase</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">VX</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
+    <span class="n">xdot</span><span class="p">,</span> <span class="n">vdot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">VX</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">Xlim</span><span class="p">,</span> <span class="n">Ylim</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Xlim</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Ylim</span><span class="p">):</span>
+            <span class="n">xloc</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            <span class="n">yloc</span> <span class="o">=</span> <span class="n">VX</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            <span class="n">xdot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">],</span> <span class="n">vdot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">VP_eqn</span><span class="p">(</span><span class="n">xloc</span><span class="p">,</span> <span class="n">yloc</span><span class="p">,</span><span class="n">mu</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xdot</span><span class="p">,</span> <span class="n">vdot</span>
+
+<span class="k">def</span> <span class="nf">VP_eqn_for_solve_ivp</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">curr_vals</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># need to rephrase this to work with what solve_ivp expects</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">curr_vals</span> 
+    <span class="n">xdot</span><span class="p">,</span> <span class="n">vdot</span> <span class="o">=</span> <span class="n">VP_eqn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">mu</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xdot</span><span class="p">,</span><span class="n">vdot</span>
+
+<span class="c1"># Numerical Integration</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">initial_condition</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> 
+<span class="n">solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">VP_eqn_for_solve_ivp</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">,</span><span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu</span><span class="p">,),</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plotting stuff</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">xdot</span><span class="p">,</span> <span class="n">vdot</span> <span class="o">=</span> <span class="n">VP_phase</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span><span class="n">mu</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">xdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">broken_streamlines</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="c1"># plot trajectory from solve_ivp</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$v$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b2b35c417248e4992f5a23970048b4e447c7b194dffa269ebb8a8ba03e3d91f3.png" src="../../_images/b2b35c417248e4992f5a23970048b4e447c7b194dffa269ebb8a8ba03e3d91f3.png" />
+<img alt="../../_images/25cdf3d887c86ce188cd8b635536f87f882bbc45ce8c5abe797a1f676a930a7e.png" src="../../_images/25cdf3d887c86ce188cd8b635536f87f882bbc45ce8c5abe797a1f676a930a7e.png" />
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -554,6 +640,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-use-analytical-computational-and-graphical-approaches-0-30">Goal: Use analytical, computational, and graphical approaches (0.30)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-provide-evidence-of-the-quality-of-their-work">Goal: Provide evidence of the quality of their work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-collaborate-effectively">Goal: Collaborate effectively</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">Starter Code</a></li>
 </ul>
 </li>
 </ul>
